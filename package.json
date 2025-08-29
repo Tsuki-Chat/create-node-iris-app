@@ -1,7 +1,7 @@
 {
   "name": "create-node-iris-app",
   "version": "1.0.0",
-  "description": "카카오톡 봇 프로젝트를 위한 Node Iris 템플릿 생성기",
+  "description": "Create a KakaoTalk bot project using node-iris",
   "license": "ISC",
   "author": "Lunatica-Luna",
   "type": "commonjs",
