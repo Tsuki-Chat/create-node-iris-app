@@ -1,9 +1,9 @@
 {
   "name": "create-node-iris-app",
-  "version": "1.0.0",
+  "version": "1.6.17",
   "description": "Create a KakaoTalk bot project using node-iris",
-  "license": "ISC",
-  "author": "Lunatica-Luna",
+  "author": "RACLA-DEV",
+  "license": "MIT",
   "type": "commonjs",
   "main": "dist/index.js",
   "bin": {
@@ -22,12 +22,17 @@
     "cli",
     "generator"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RACLA-DEV/create-node-iris-app.git"
+  },
   "scripts": {
     "build": "tsc",
     "start": "node dist/index.js",
     "dev": "ts-node src/index.ts",
     "prepublishOnly": "npm run build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "publish:public": "npm publish --access public"
   },
   "dependencies": {
     "chalk": "^4.1.2",
