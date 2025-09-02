@@ -21,7 +21,112 @@ IRIS_URL=127.0.0.1:3000
 # 최대 워커 스레드 수 (선택사항)
 MAX_WORKERS=4
 
-# 차단된 사용자 ID 목록 (쉼표로 구분, 선택사항)
+# 차단된 사용자 I1. `.env` 파일의 설정값들이 올바른지 확인
+2. 카카오 계정의 2단계 인증 설정 확인
+3. API 키가 유효한지 확인
+
+### 명령어가 작동하지 않는 경우
+
+1. 컨트롤러가 올바르게 등록되었는지 확인
+2. prefix 설정이 올바른지 확인
+3. 데코레이터가 올바르게 적용되었는지 확인
+
+## 배치 처리 및 스케줄링 기능
+
+이 템플릿에는 배치 처리와 스케줄링 기능을 보여주는 예제 컨트롤러들이 포함되어 있습니다.
+
+### CustomBatchController
+
+배치 처리 기능을 담당하는 컨트롤러입니다:
+
+- `@Schedule(5000)`: 5초마다 수집된 메시지들을 배치로 처리
+- `@Schedule(30000, 'daily-summary')`: 30초마다 일일 요약 생성
+- `@ScheduleMessage('reminder')`: 리마인더 메시지 처리
+- `@ScheduleMessage('notification')`: 알림 메시지 처리
+
+### CustomBootstrapController
+
+봇 시작 시 초기화 작업을 수행하는 컨트롤러입니다 (숫자가 낮을수록 먼저 실행):
+
+- `@Bootstrap(1)`: 데이터베이스 초기화 (최우선 실행)
+- `@Bootstrap(10)`: 봇 설정 로드 (두 번째 실행)
+- `@Bootstrap(50)`: 주기적 작업 설정 (세 번째 실행)
+- `@Bootstrap(100)`: 정리 및 최적화 작업 (마지막 실행)
+
+### 스케줄 메시지 작동 방식
+
+스케줄 메시지는 `metadata.key` 값에 따라 해당하는 `@ScheduleMessage` 데코레이터가 적용된 메서드에서 처리됩니다:
+
+```typescript
+// 1. 메시지 스케줄링
+scheduler.scheduleMessage(
+  'reminder-id',
+  'room-id',
+  '알림 메시지입니다!',
+  Date.now() + 60000, // 1분 후
+  { key: 'reminder', type: 'meeting' } // 이 key로 처리할 메서드 결정
+);
+
+// 2. 처리 메서드 (CustomBatchController에서)
+@ScheduleMessage('reminder') // key가 'reminder'인 메시지 처리
+async handleReminderMessages(scheduledMessage: ScheduledMessage) {
+  // 메시지가 자동으로 전송된 후 이 메서드가 호출됨
+  console.log('리마인더 처리:', scheduledMessage.message);
+}
+```
+
+### 환경 변수 설정
+
+배치 기능을 위한 추가 환경 변수들을 `.env` 파일에 설정할 수 있습니다:
+
+```env
+# 배치 처리 설정
+BATCH_SIZE=100
+SCHEDULE_INTERVAL=5000
+ENABLE_REMINDERS=true
+ENABLE_NOTIFICATIONS=true
+```
+
+### 사용 예제
+
+```typescript
+import { BatchScheduler } from "@racla-dev/node-iris";
+
+// 프로그래매틱하게 메시지 스케줄링
+const scheduler = BatchScheduler.getInstance();
+
+// 리마인더 메시지 (CustomBatchController의 handleReminderMessages에서 처리)
+scheduler.scheduleMessage(
+  'meeting-reminder',
+  'room-id',
+  '회의가 10분 후에 시작됩니다!',
+  Date.now() + 10 * 60 * 1000, // 10분 후
+  { 
+    key: 'reminder', // 이 키로 처리할 메서드 결정
+    type: 'meeting',
+    recurring: false 
+  }
+);
+
+// 시스템 알림 (CustomBatchController의 handleNotificationMessages에서 처리)
+scheduler.scheduleMessage(
+  'system-alert',
+  'room-id',
+  '서버 점검이 예정되어 있습니다.',
+  Date.now() + 60000, // 1분 후
+  { 
+    key: 'notification', // 다른 키로 다른 메서드에서 처리
+    type: 'system',
+    priority: 'important'
+  }
+);
+```
+
+## 라이선스
+
+MIT
+
+**면책 조항**: 이 프로젝트는 교육 및 연구 목적으로만 제공됩니다. 사용자는 모든 관련 법률과 서비스 약관을 준수할 책임이 있습니다.택사항)
 BANNED_USERS=123456789,987654321
 
 # KakaoLink 설정 (카카오링크 기능 사용시 필요)

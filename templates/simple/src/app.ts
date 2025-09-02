@@ -10,6 +10,8 @@ import CustomMessageController from "./controllers/CustomMessageController";
 import CustomFeedController from "./controllers/CustomFeedController";
 import CustomUnknownController from "./controllers/CustomUnknownController";
 import CustomErrorController from "./controllers/CustomErrorController";
+import CustomBatchController from "./controllers/CustomBatchController";
+import CustomBootstrapController from "./controllers/CustomBootstrapController";
 
 const appName = "Create-Node-Iris-App";
 
@@ -22,6 +24,8 @@ const controllers = [
   CustomFeedController,
   CustomUnknownController,
   CustomErrorController,
+  CustomBatchController,
+  CustomBootstrapController,
 ];
 
 class App {
