@@ -123,15 +123,21 @@ class CustomMessageController {
   @BotCommand("throttle")
   @Throttle(
     3,
-    10,
-    async (context, maxCalls, windowSeconds, secondsUntilNext) => {
+    10000,
+    async (
+      context: ChatContext,
+      maxCalls: number,
+      windowMs: number,
+      msUntilNext: number
+    ) => {
+      const secondsUntilNext = Math.ceil(msUntilNext / 1000);
       await context.reply(
         `⏱️ 명령어 사용 제한!\n` +
-          `• 제한: ${windowSeconds}초 내 최대 ${maxCalls}번\n` +
+          `• 제한: ${windowMs / 1000}초 내 최대 ${maxCalls}번\n` +
           `• 다음 사용 가능: ${secondsUntilNext}초 후`
       );
     }
-  ) // 10초 내 최대 3번
+  ) // 10초(10000ms) 내 최대 3번
   async throttledCommand(context: ChatContext) {
     await context.reply("제한된 명령어가 실행되었습니다!");
   }
