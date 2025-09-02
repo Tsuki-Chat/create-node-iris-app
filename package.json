@@ -43,7 +43,7 @@
   },
   "devDependencies": {
     "@types/fs-extra": "^11.0.4",
-    "@types/inquirer": "^8.2.10",
+    "@types/inquirer": "^9.0.0",
     "@types/node": "22.18.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.7.2"
