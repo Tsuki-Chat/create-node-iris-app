@@ -7,7 +7,7 @@ import Bot, {
   KakaoLink,
   MessageController,
   Prefix,
-  Room,
+  AllowedRoom,
   Throttle,
 } from "@racla-dev/node-iris";
 
@@ -156,13 +156,13 @@ class CustomMessageController {
   }
 
   @BotCommand("restricted")
-  @Room(["ROOM_ID_1", "ROOM_ID_2"]) // 특정 방에서만 실행 가능
+  @AllowedRoom(["ROOM_ID_1", "ROOM_ID_2"]) // 특정 방에서만 실행 가능
   async restrictedCommand(context: ChatContext) {
     await context.reply("이 명령어는 허용된 방에서만 실행됩니다!");
   }
 
   @BotCommand("vip")
-  @Room(["VIP_ROOM_ID"]) // VIP 방에서만 실행
+  @AllowedRoom(["VIP_ROOM_ID"]) // VIP 방에서만 실행
   @HasRole(["HOST", "MANAGER"]) // 관리자만 실행 가능
   async vipCommand(context: ChatContext) {
     await context.reply("VIP 전용 관리자 명령어입니다!");
