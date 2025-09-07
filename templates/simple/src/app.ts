@@ -1,17 +1,16 @@
+import { Bot, Logger } from "@racla-dev/node-iris";
 import "dotenv/config";
-import { Bot } from "@racla-dev/node-iris";
-import { Logger } from "@racla-dev/node-iris";
 
 // Import controller classes
-import CustomChatController from "./controllers/CustomChatController";
-import CustomNewMemberController from "./controllers/CustomNewMemberController";
-import CustomDeleteMemberController from "./controllers/CustomDeleteMemberController";
-import CustomMessageController from "./controllers/CustomMessageController";
-import CustomFeedController from "./controllers/CustomFeedController";
-import CustomUnknownController from "./controllers/CustomUnknownController";
-import CustomErrorController from "./controllers/CustomErrorController";
 import CustomBatchController from "./controllers/CustomBatchController";
 import CustomBootstrapController from "./controllers/CustomBootstrapController";
+import CustomChatController from "./controllers/CustomChatController";
+import CustomDeleteMemberController from "./controllers/CustomDeleteMemberController";
+import CustomErrorController from "./controllers/CustomErrorController";
+import CustomFeedController from "./controllers/CustomFeedController";
+import CustomMessageController from "./controllers/CustomMessageController";
+import CustomNewMemberController from "./controllers/CustomNewMemberController";
+import CustomUnknownController from "./controllers/CustomUnknownController";
 
 const appName = "Create-Node-Iris-App";
 
@@ -40,6 +39,9 @@ class App {
     this.bot = new Bot(appName, process.env.IRIS_URL, {
       saveChatLogs: process.env.SAVE_CHAT_LOGS === "true",
       autoRegisterControllers: false, // Disable auto-registration
+      // httpMode: true, //If you want to use webhook mode, uncomment these lines
+      // webhookPort: 3000,
+      // webhookPath: "/webhook/message",
     });
 
     // Register controllers manually
