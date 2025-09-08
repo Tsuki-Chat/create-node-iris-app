@@ -39,6 +39,7 @@ class App {
     this.bot = new Bot(appName, process.env.IRIS_URL, {
       saveChatLogs: process.env.SAVE_CHAT_LOGS === "true",
       autoRegisterControllers: false, // Disable auto-registration
+      logLevel: (process.env.LOG_LEVEL as LogLevel) || "debug",
       // httpMode: true, //If you want to use webhook mode, uncomment these lines
       // webhookPort: 3000,
       // webhookPath: "/webhook/message",

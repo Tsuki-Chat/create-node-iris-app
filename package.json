@@ -1,6 +1,6 @@
 {
   "name": "create-node-iris-app",
-  "version": "1.6.25",
+  "version": "1.6.26",
   "description": "Create a KakaoTalk bot project using node-iris",
   "author": "RACLA-DEV",
   "license": "MIT",
