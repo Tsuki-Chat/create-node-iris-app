@@ -1,4 +1,4 @@
-import { Bot, Logger } from "@racla-dev/node-iris";
+import { Bot, Logger, type LogLevel } from "@racla-dev/node-iris";
 import "dotenv/config";
 
 // Import controller classes

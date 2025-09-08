@@ -35,7 +35,7 @@
     "publish:public": "npm publish --access public"
   },
   "dependencies": {
-    "@racla-dev/node-iris": "latest",
+    "@racla-dev/node-iris": "^1.6.26",
     "chalk": "^4.1.2",
     "commander": "^12.1.0",
     "fs-extra": "^11.2.0",
