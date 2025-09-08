@@ -36,7 +36,7 @@
   },
   "dependencies": {
     "@racla-dev/node-iris": "1.6.28",
-    "chalk": "^4.1.2",
+    "chalk": "^5.0.0",
     "commander": "^12.1.0",
     "fs-extra": "^11.2.0",
     "inquirer": "^8.2.6",
