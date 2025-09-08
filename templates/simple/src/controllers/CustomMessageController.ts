@@ -1,4 +1,5 @@
 import Bot, {
+  AllowedRoom,
   BotCommand,
   ChatContext,
   HasParam,
@@ -7,7 +8,6 @@ import Bot, {
   KakaoLink,
   MessageController,
   Prefix,
-  AllowedRoom,
   Throttle,
 } from "@racla-dev/node-iris";
 
@@ -31,12 +31,12 @@ class CustomMessageController {
     await context.reply("Pong!");
   }
 
-  @BotCommand("photo", "테스트 이미지 전송")
-  async photoCommand(context: ChatContext) {
-    await context.replyImageUrls([
-      "https://res.ldrescdn.com/rms/ldplayer/process/img/1efe98e401d641c589a1a991e701fccf1749462145.jpg",
-    ]);
-  }
+  // @BotCommand("photo", "테스트 이미지 전송")
+  // async photoCommand(context: ChatContext) {
+  //   await context.replyImageUrls([
+  //     "IMAGE_URL",
+  //   ]);
+  // }
 
   @BotCommand("echo", "메시지 따라하기 <메시지>")
   @HasParam
