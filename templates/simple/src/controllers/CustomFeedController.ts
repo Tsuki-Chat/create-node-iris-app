@@ -1,9 +1,4 @@
-import {
-  ChatContext,
-  FeedController,
-  Logger,
-  OnFeedMessage,
-} from "@racla-dev/node-iris";
+import { FeedController, Logger } from "@racla-dev/node-iris";
 
 @FeedController
 class CustomFeedController {

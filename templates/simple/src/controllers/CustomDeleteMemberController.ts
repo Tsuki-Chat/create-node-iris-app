@@ -1,9 +1,4 @@
-import {
-  ChatContext,
-  Logger,
-  DeleteMemberController,
-  Command,
-} from "@racla-dev/node-iris";
+import { DeleteMemberController, Logger } from "@racla-dev/node-iris";
 
 @DeleteMemberController
 class CustomDeleteMemberController {
