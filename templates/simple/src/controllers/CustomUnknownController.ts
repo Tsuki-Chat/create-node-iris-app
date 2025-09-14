@@ -1,8 +1,8 @@
 import {
   ChatContext,
-  UnknownController,
-  Logger,
   Command,
+  Logger,
+  UnknownController,
 } from "@racla-dev/node-iris";
 
 @UnknownController

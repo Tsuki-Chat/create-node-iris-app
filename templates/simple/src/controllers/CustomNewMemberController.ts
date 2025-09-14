@@ -1,9 +1,4 @@
-import {
-  ChatContext,
-  Logger,
-  NewMemberController,
-  Command,
-} from "@racla-dev/node-iris";
+import { Logger, NewMemberController } from "@racla-dev/node-iris";
 
 @NewMemberController
 class CustomNewMemberController {

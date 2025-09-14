@@ -1,4 +1,4 @@
-import { ErrorController, Logger, Command } from "@racla-dev/node-iris";
+import { Command, ErrorController, Logger } from "@racla-dev/node-iris";
 
 @ErrorController
 class CustomErrorController {

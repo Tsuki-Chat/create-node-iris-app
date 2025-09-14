@@ -1,12 +1,12 @@
 #!/usr/bin/env node
 
-import { Command } from "commander";
-import inquirer from "inquirer";
-import fs from "fs-extra";
-import path from "path";
 import chalk from "chalk";
-import ora from "ora";
 import { execSync } from "child_process";
+import { Command } from "commander";
+import fs from "fs-extra";
+import inquirer from "inquirer";
+import ora from "ora";
+import path from "path";
 
 const program = new Command();
 
@@ -208,11 +208,9 @@ async function createProject(answers: ProjectAnswers) {
       console.log(chalk.cyan(`3. ${packageManager} run dev`));
     }
 
+    console.log("\n📖 Documentation: https://github.com/RACLA-DEV/node-iris");
     console.log(
-      "\n📖 Documentation: https://github.com/Lunatica-Luna/node-iris"
-    );
-    console.log(
-      "🐛 Report issues: https://github.com/Lunatica-Luna/node-iris/issues"
+      "🐛 Report issues: https://github.com/RACLA-DEV/node-iris/issues"
     );
   } catch (error) {
     spinner.fail("Failed to create project.");
@@ -283,4 +281,4 @@ if (require.main === module) {
   program.parse();
 }
 
-export { main, createProject };
+export { createProject, main };

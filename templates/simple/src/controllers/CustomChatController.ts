@@ -1,9 +1,4 @@
-import {
-  ChatContext,
-  ChatController,
-  Logger,
-  Command,
-} from "@racla-dev/node-iris";
+import { ChatController, Logger } from "@racla-dev/node-iris";
 
 @ChatController
 class CustomChatController {
