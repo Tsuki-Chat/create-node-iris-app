@@ -32,12 +32,12 @@ const TEMPLATES: TemplateConfig[] = [
       "Simple bot template with basic message handlers and controllers",
     path: "simple",
   },
-  // More templates can be added later
-  // {
-  //   name: 'advanced',
-  //   description: 'Advanced bot template with database integration and advanced features',
-  //   path: 'advanced'
-  // }
+  {
+    name: "new-delete-member",
+    description:
+      "Bot template that handles member join/leave events and logs them",
+    path: "new-delete-member",
+  },
 ];
 
 async function main() {
