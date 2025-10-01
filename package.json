@@ -1,6 +1,6 @@
 {
   "name": "create-node-iris-app",
-  "version": "1.6.35",
+  "version": "1.6.36",
   "description": "Create a KakaoTalk bot project using node-iris",
   "author": "RACLA-DEV",
   "license": "MIT",
@@ -38,13 +38,13 @@
   },
   "dependencies": {
     "@prisma/client": "^6.16.2",
-    "@racla-dev/node-iris": "1.6.35",
+    "@racla-dev/node-iris": "1.6.36",
     "chalk": "^5.6.2",
     "commander": "^14.0.1",
     "fs-extra": "^11.3.1",
     "inquirer": "^12.9.4",
     "nodemon": "^3.1.10",
-    "ora": "^8.2.0",
+    "ora": "^9.0.0",
     "prisma": "^6.16.2"
   },
   "devDependencies": {
