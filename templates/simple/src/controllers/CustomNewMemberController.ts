@@ -1,4 +1,4 @@
-import { Logger, NewMemberController } from "@racla-dev/node-iris";
+import { Logger, NewMemberController } from "@tsuki-chat/node-iris";
 
 @NewMemberController
 class CustomNewMemberController {

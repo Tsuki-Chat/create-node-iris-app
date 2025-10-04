@@ -1,4 +1,4 @@
-import { BatchController, Bot, Logger, Schedule } from "@racla-dev/node-iris";
+import { BatchController, Bot, Logger, Schedule } from "@tsuki-chat/node-iris";
 import { prisma } from "../prisma";
 import { MemberService } from "../services/MemberService";
 

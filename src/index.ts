@@ -208,9 +208,9 @@ async function createProject(answers: ProjectAnswers) {
       console.log(chalk.cyan(`3. ${packageManager} run dev`));
     }
 
-    console.log("\n📖 Documentation: https://github.com/RACLA-DEV/node-iris");
+    console.log("\n📖 Documentation: https://github.com/Tsuki-Chat/node-iris");
     console.log(
-      "🐛 Report issues: https://github.com/RACLA-DEV/node-iris/issues"
+      "🐛 Report issues: https://github.com/Tsuki-Chat/node-iris/issues"
     );
   } catch (error) {
     spinner.fail("Failed to create project.");
