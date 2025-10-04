@@ -2,7 +2,7 @@
 
 {{PROJECT_DESCRIPTION}}
 
-이 프로젝트는 [@racla-dev/node-iris](https://www.npmjs.com/package/@racla-dev/node-iris)를 기반으로 생성된 카카오톡 봇입니다.
+이 프로젝트는 [@tsuki-chat/node-iris](https://www.npmjs.com/package/@tsuki-chat/node-iris)를 기반으로 생성된 카카오톡 봇입니다.
 
 ## 개발 환경 설정
 
@@ -118,7 +118,7 @@ async handleReminderMessages(scheduledMessage: ScheduledMessage) {
 #### 사용 예제
 
 ```typescript
-import { BatchScheduler } from "@racla-dev/node-iris";
+import { BatchScheduler } from "@tsuki-chat/node-iris";
 
 // 프로그래매틱하게 메시지 스케줄링
 const scheduler = BatchScheduler.getInstance();
@@ -557,7 +557,7 @@ export default class CustomMessageController {
 
 ```typescript
 // app.ts
-import { Bot } from "@racla-dev/node-iris";
+import { Bot } from "@tsuki-chat/node-iris";
 
 const bot = new Bot(process.env.IRIS_URL!, {
   httpMode: true,
@@ -572,7 +572,7 @@ const bot = new Bot(process.env.IRIS_URL!, {
 카카오링크를 사용하여 템플릿 메시지를 전송할 수 있습니다:
 
 ```typescript
-import { KakaoLink } from "@racla-dev/node-iris";
+import { KakaoLink } from "@tsuki-chat/node-iris";
 
 const kakaoLink = new KakaoLink(
   process.env.IRIS_URL!,
@@ -593,7 +593,7 @@ await kakaoLink.send(
 주기적 작업이나 지연된 메시지 전송을 위한 스케줄러:
 
 ```typescript
-import { BatchScheduler } from "@racla-dev/node-iris";
+import { BatchScheduler } from "@tsuki-chat/node-iris";
 
 const scheduler = BatchScheduler.getInstance();
 
@@ -612,7 +612,7 @@ scheduler.scheduleMessage(
 다양한 로그 레벨을 지원하는 통합 로깅:
 
 ```typescript
-import { Logger, LogLevel } from "@racla-dev/node-iris";
+import { Logger, LogLevel } from "@tsuki-chat/node-iris";
 
 // 커스텀 로거 생성
 const logger = new Logger(LogLevel.DEBUG);
@@ -628,7 +628,7 @@ logger.debug("디버그 메시지");
 커스텀 이벤트 시스템:
 
 ```typescript
-import { EventEmitter } from "@racla-dev/node-iris";
+import { EventEmitter } from "@tsuki-chat/node-iris";
 
 const eventEmitter = new EventEmitter();
 
@@ -708,7 +708,7 @@ try {
 
 ## 참조
 
-- [node-iris](https://github.com/RACLA-DEV/node-iris)
+- [node-iris](https://github.com/Tsuki-Chat/node-iris)
 
 ## 문제 해결
 

@@ -1,4 +1,4 @@
-import { FeedController, Logger } from "@racla-dev/node-iris";
+import { FeedController, Logger } from "@tsuki-chat/node-iris";
 
 @FeedController
 class CustomFeedController {

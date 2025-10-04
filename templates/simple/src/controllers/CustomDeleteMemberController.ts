@@ -1,4 +1,4 @@
-import { DeleteMemberController, Logger } from "@racla-dev/node-iris";
+import { DeleteMemberController, Logger } from "@tsuki-chat/node-iris";
 
 @DeleteMemberController
 class CustomDeleteMemberController {

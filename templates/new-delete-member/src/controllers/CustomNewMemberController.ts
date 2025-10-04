@@ -3,7 +3,7 @@ import {
   Command,
   Logger,
   NewMemberController,
-} from "@racla-dev/node-iris";
+} from "@tsuki-chat/node-iris";
 import { MemberService } from "../services/MemberService";
 
 @NewMemberController

@@ -3,7 +3,7 @@ import {
   Bootstrap,
   BootstrapController,
   Logger,
-} from "@racla-dev/node-iris";
+} from "@tsuki-chat/node-iris";
 
 @BootstrapController
 class CustomBootstrapController {

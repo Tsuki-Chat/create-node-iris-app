@@ -1,4 +1,4 @@
-import { Logger } from "@racla-dev/node-iris";
+import { Logger } from "@tsuki-chat/node-iris";
 import App from "./app";
 
 const logger = new Logger("Main");
